@@ -200,6 +200,28 @@ const RoomDetail: React.FC = () => {
                 <div className="flex justify-between"><span className="underline">${room.price} x {nights} nights</span><span>${subtotal}</span></div>
                 <div className="flex justify-between font-black text-zinc-950 dark:text-white text-lg"><span>Total</span><span>${total}</span></div>
               </div>
+
+              <div className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700">
+                <h4 className="text-sm font-black uppercase text-zinc-900 dark:text-zinc-100 mb-4">Special Packages & Discounts</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg">
+                    <span className="text-sm text-zinc-700 dark:text-zinc-300">3 Days</span>
+                    <span className="text-sm font-bold text-green-600">5% off</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg">
+                    <span className="text-sm text-zinc-700 dark:text-zinc-300">7 Days</span>
+                    <span className="text-sm font-bold text-green-600">10% off</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg">
+                    <span className="text-sm text-zinc-700 dark:text-zinc-300">Monthly</span>
+                    <span className="text-sm font-bold text-green-600">15% off</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg">
+                    <span className="text-sm text-zinc-700 dark:text-zinc-300">Yearly</span>
+                    <span className="text-sm font-bold text-green-600">30% off</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
