@@ -110,12 +110,30 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-xs font-black uppercase tracking-[0.4em] text-white mb-8">Global HQ</h4>
+            <h4 className="text-xs font-black uppercase tracking-[0.4em] text-white mb-8">Our Location</h4>
             <ul className="space-y-4 text-[11px] font-black uppercase tracking-widest text-zinc-500">
-              <li className="text-white">123 Luxury Blvd, Suite 100</li>
-              <li>Manhattan, NY 10001</li>
-              <li>+1 (555) 949-4663</li>
-              <li className="text-red-600">concierge@wizhomes.com</li>
+              <li className="text-white">Wiz Homes, Akyim Third St</li>
+              <li>Cape Coast, Ghana</li>
+              <li>
+                <a href="https://maps.app.goo.gl/iLyuz8HKnd8CtMxaA" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">
+                  Get Directions
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-[0.4em] text-white mb-8">Contact</h4>
+            <ul className="space-y-4 text-[11px] font-black uppercase tracking-widest text-zinc-500">
+              <li>
+                <a href="https://wa.me/233552795947" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">
+                  +233 55 279 5947
+                </a>
+              </li>
+              <li>
+                <a href="mailto:wizhomesgh@gmail.com" className="hover:text-red-600 transition-colors">
+                  wizhomesgh@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
