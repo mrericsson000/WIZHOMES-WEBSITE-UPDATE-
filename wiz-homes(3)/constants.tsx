@@ -45,8 +45,8 @@ export const MOCK_ROOMS: Room[] = [
     price: 100,
     status: RoomStatus.AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
-    imageUrl: '',
-    gallery: [],
+    imageUrl: '/EXECUTIVE SUITE 2/executive-suite-2-1.jpeg',
+    gallery: ['/EXECUTIVE SUITE 2/executive-suite-2-1.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-2.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-3.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-4.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-5.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-6.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-7.jpeg', '/EXECUTIVE SUITE 2/executive-suite-2-8.jpeg'],
     rating: 4.6,
     location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
