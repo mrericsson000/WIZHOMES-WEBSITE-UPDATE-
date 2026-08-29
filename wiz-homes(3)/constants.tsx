@@ -5,108 +5,72 @@ import { Room, RoomStatus, Booking } from './types';
 export const MOCK_ROOMS: Room[] = [
   {
     id: '1',
-    name: 'Royal Penthouse',
+    name: 'Wiz Standaard Suite 1',
     price: 100,
     status: RoomStatus.AVAILABLE,
     amenities: ['High-speed Wifi', 'Private Pool', 'State-of-the-art Gym', 'Panaromic City View', '24/7 Concierge', 'Smart Home System'],
-    imageUrl: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800'
-    ],
+    imageUrl: '',
+    gallery: [],
     rating: 4.9,
     location: 'Downtown Core',
     description: 'Experience pure luxury in our flagship penthouse. Featuring soaring floor-to-ceiling windows and bespoke Italian furniture, this residence offers an unparalleled lifestyle. Every detail has been curated to provide a sophisticated sanctuary above the bustling city streets.'
   },
   {
     id: '2',
-    name: 'Modern Studio Suite',
+    name: 'Wiz Standard Suite 2',
     price: 100,
     status: RoomStatus.BOOKED,
     amenities: ['Wifi', 'Designer Kitchen', 'Dedicated Workspace', 'Nespresso Machine', 'Rain Shower'],
-    imageUrl: 'https://images.unsplash.com/photo-1536376074432-bf115977d28c?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1536376074432-bf115977d28c?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800'
-    ],
+    imageUrl: '',
+    gallery: [],
     rating: 4.7,
     location: 'Arts District',
     description: 'Perfect for business travelers and creative souls. This studio combines industrial aesthetics with warm, natural materials to create an inspiring home office environment.'
   },
   {
     id: '3',
-    name: 'Skyline Terrace Loft',
+    name: 'Wiz Executive Suite 1',
     price: 100,
     status: RoomStatus.AVAILABLE,
     amenities: ['Wifi', 'Private Terrace', 'Hot Tub', 'Open Plan Living', 'Wine Cellar'],
-    imageUrl: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=800'
-    ],
+    imageUrl: '',
+    gallery: [],
     rating: 4.8,
     location: 'Financial District',
     description: 'A spacious loft with breathtaking skyline views and a private terrace designed for hosting evening soirees under the stars.'
   },
   {
     id: '4',
-    name: 'Garden Oasis Apartment',
+    name: 'Wiz Executive 2',
     price: 100,
     status: RoomStatus.AVAILABLE,
     amenities: ['Private Garden', 'Wifi', 'Breakfast Included', 'Yoga Studio Access', 'Eco-friendly Design'],
-    imageUrl: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800'
-    ],
+    imageUrl: '',
+    gallery: [],
     rating: 4.6,
     location: 'Greenwich Park',
     description: 'Peaceful retreat surrounded by lush greenery. The interior palette of soft earth tones and natural textures creates a truly calming atmosphere.'
   },
   {
     id: '5',
-    name: 'Executive Duplex',
+    name: 'Wiz Presidential 1',
     price: 100,
     status: RoomStatus.NOT_AVAILABLE,
     amenities: ['Private Butler', 'Rooftop Pool', 'Home Theater', 'Secure Parking', 'Grand Piano'],
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=800'
-    ],
+    imageUrl: '',
+    gallery: [],
     rating: 5.0,
     location: 'Highland Heights',
     description: 'The ultimate executive living experience. This two-story residence boasts architectural significance and a suite of services typically reserved for world-class hotels.'
   },
   {
     id: '6',
-    name: 'Urban Chic Flat',
+    name: 'Wiz Presidentail Suite 2',
     price: 100,
     status: RoomStatus.AVAILABLE,
     amenities: ['Wifi', 'Pet Friendly', 'Balcony', 'City Center Access', 'Modern Furniture'],
-    imageUrl: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-    gallery: [
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800'
-    ],
+    imageUrl: '',
+    gallery: [],
     rating: 4.5,
     location: 'Metro Center',
     description: 'Stylish, central, and close to everything. An ideal base for exploring the city vibrant nightlife and shopping districts.'
@@ -120,9 +84,9 @@ export const getRooms = (): Room[] => {
 };
 
 export const MOCK_BOOKINGS: Booking[] = [
-  { id: 'B1', guestName: 'Alice Johnson', roomName: 'Royal Penthouse', checkIn: '2023-12-01', checkOut: '2023-12-05', status: 'Confirmed', total: 1800 },
-  { id: 'B2', guestName: 'Bob Smith', roomName: 'Modern Studio Suite', checkIn: '2023-12-02', checkOut: '2023-12-04', status: 'Confirmed', total: 360 },
-  { id: 'B3', guestName: 'Charlie Brown', roomName: 'Skyline Terrace Loft', checkIn: '2023-12-10', checkOut: '2023-12-15', status: 'Pending', total: 1600 }
+  { id: 'B1', guestName: 'Alice Johnson', roomName: 'Wiz Standaard Suite 1', checkIn: '2023-12-01', checkOut: '2023-12-05', status: 'Confirmed', total: 1800 },
+  { id: 'B2', guestName: 'Bob Smith', roomName: 'Wiz Standard Suite 2', checkIn: '2023-12-02', checkOut: '2023-12-04', status: 'Confirmed', total: 360 },
+  { id: 'B3', guestName: 'Charlie Brown', roomName: 'Wiz Executive Suite 1', checkIn: '2023-12-10', checkOut: '2023-12-15', status: 'Pending', total: 1600 }
 ];
 
 export const Logo: React.FC<{ className?: string; light?: boolean }> = ({ className = "h-12", light = false }) => (

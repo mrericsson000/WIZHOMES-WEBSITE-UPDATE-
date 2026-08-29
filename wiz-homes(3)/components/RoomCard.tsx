@@ -26,12 +26,23 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
 
   return (
     <div className="group cursor-pointer" onClick={handleCardClick}>
-      <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 mb-4 border border-zinc-100 dark:border-zinc-800">
-        <img 
-          src={room.imageUrl} 
-          alt={room.name} 
-          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-        />
+      <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 mb-4 border border-zinc-100 dark:border-zinc-800 flex items-center justify-center">
+        {room.imageUrl ? (
+          <img 
+            src={room.imageUrl} 
+            alt={room.name} 
+            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full w-full bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400 dark:text-zinc-500 mb-2">
+              <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">Image pending upload</span>
+          </div>
+        )}
         <div className="absolute top-4 left-4">
           <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm ${getStatusColor(room.status)}`}>
             {room.status}

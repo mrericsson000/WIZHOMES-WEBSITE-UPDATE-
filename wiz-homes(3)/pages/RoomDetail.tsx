@@ -122,20 +122,34 @@ const RoomDetail: React.FC = () => {
         <h1 className="text-3xl font-black text-zinc-950 dark:text-white mb-6 tracking-tight">{room.name}</h1>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800">
-          <div className="md:col-span-2 md:row-span-2 overflow-hidden">
-            <img src={images[0]} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer" />
+        {images.length > 0 && images[0] ? (
+          <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800">
+            <div className="md:col-span-2 md:row-span-2 overflow-hidden">
+              <img src={images[0]} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer" />
+            </div>
+            <div className="hidden md:block overflow-hidden"><img src={images[1] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
+            <div className="hidden md:block overflow-hidden"><img src={images[2] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
+            <div className="hidden md:block overflow-hidden"><img src={images[3] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
+            <div className="hidden md:block overflow-hidden relative">
+              <img src={images[4] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" />
+              <button onClick={() => showNotification('Opening full gallery...', 'info')} className="absolute bottom-6 right-6 px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm font-bold shadow-xl hover:scale-105 transition-all">
+                Show all photos
+              </button>
+            </div>
           </div>
-          <div className="hidden md:block overflow-hidden"><img src={images[1] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
-          <div className="hidden md:block overflow-hidden"><img src={images[2] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
-          <div className="hidden md:block overflow-hidden"><img src={images[3] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
-          <div className="hidden md:block overflow-hidden relative">
-            <img src={images[4] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" />
-            <button onClick={() => showNotification('Opening full gallery...', 'info')} className="absolute bottom-6 right-6 px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm font-bold shadow-xl hover:scale-105 transition-all">
-              Show all photos
-            </button>
+        ) : (
+          <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 flex items-center justify-center">
+            <div className="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400 dark:text-zinc-500 mx-auto mb-4">
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="m21 15-5-5L5 21"/>
+              </svg>
+              <p className="text-zinc-600 dark:text-zinc-300 font-semibold">Room images will be uploaded soon</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2">High-quality photos coming shortly</p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Content Section */}
