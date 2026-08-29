@@ -17,6 +17,7 @@ const RoomDetail: React.FC = () => {
   const [descExpanded, setDescExpanded] = useState(false);
   const [amenitiesExpanded, setAmenitiesExpanded] = useState(false);
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'info' } | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   // Form State
   const [checkIn, setCheckIn] = useState('2024-12-01');
@@ -48,6 +49,17 @@ const RoomDetail: React.FC = () => {
   };
 
   const images = room.gallery || [room.imageUrl];
+
+  const openGallery = (index: number) => setSelectedImageIndex(index);
+  const closeGallery = () => setSelectedImageIndex(null);
+  const nextImage = () => {
+    if (selectedImageIndex === null) return;
+    setSelectedImageIndex((selectedImageIndex + 1) % images.length);
+  };
+  const prevImage = () => {
+    if (selectedImageIndex === null) return;
+    setSelectedImageIndex((selectedImageIndex - 1 + images.length) % images.length);
+  };
 
   // Calculate nights and prices
   const nights = useMemo(() => {
@@ -110,19 +122,33 @@ const RoomDetail: React.FC = () => {
 
         {/* Gallery Grid */}
         {images.length > 0 && images[0] ? (
-          <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800">
-            <div className="md:col-span-2 md:row-span-2 overflow-hidden">
-              <img src={images[0]} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer" />
+          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-3 md:gap-4 h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800">
+            <div className="col-span-2 md:col-span-2 md:row-span-2 overflow-hidden">
+              <img 
+                src={images[0]} 
+                alt={`${room.name} - Main photo`} 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer"
+                onClick={() => openGallery(0)}
+              />
             </div>
-            <div className="hidden md:block overflow-hidden"><img src={images[1] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
-            <div className="hidden md:block overflow-hidden"><img src={images[2] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
-            <div className="hidden md:block overflow-hidden"><img src={images[3] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" /></div>
-            <div className="hidden md:block overflow-hidden relative">
-              <img src={images[4] || images[0]} alt="" className="w-full h-full object-cover hover:scale-105" />
-              <button onClick={() => showNotification('Opening full gallery...', 'info')} className="absolute bottom-6 right-6 px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm font-bold shadow-xl hover:scale-105 transition-all">
-                Show all photos
-              </button>
-            </div>
+            {images.slice(1, 5).map((img, idx) => (
+              <div key={idx} className={`overflow-hidden ${idx === 3 && images.length > 5 ? 'relative' : ''}`}>
+                <img 
+                  src={img || images[0]} 
+                  alt={`${room.name} - Photo ${idx + 2}`} 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer"
+                  onClick={() => openGallery(idx + 1)}
+                />
+                {idx === 3 && images.length > 5 && (
+                  <button 
+                    onClick={() => openGallery(4)}
+                    className="absolute inset-0 bg-black/50 flex items-center justify-center text-white font-black text-lg hover:bg-black/60 transition-colors"
+                  >
+                    +{images.length - 5} more
+                  </button>
+                )}
+              </div>
+            ))}
           </div>
         ) : (
           <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 flex items-center justify-center">
@@ -134,6 +160,59 @@ const RoomDetail: React.FC = () => {
               </svg>
               <p className="text-zinc-600 dark:text-zinc-300 font-semibold">Room images will be uploaded soon</p>
               <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2">High-quality photos coming shortly</p>
+            </div>
+          </div>
+        )}
+
+        {/* Gallery Modal */}
+        {selectedImageIndex !== null && (
+          <div className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center" onClick={closeGallery}>
+            <div className="relative w-full h-full md:w-auto md:h-auto md:max-w-5xl md:max-h-[80vh] flex items-center justify-center p-4 md:p-8" onClick={(e) => e.stopPropagation()}>
+              <button 
+                onClick={closeGallery}
+                className="absolute top-4 right-4 md:top-8 md:right-8 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition-all text-white border border-white/20"
+                aria-label="Close gallery"
+              >
+                ✕
+              </button>
+              
+              {images.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all text-white border border-white/20"
+                    aria-label="Previous image"
+                  >
+                    ‹
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-all text-white border border-white/20"
+                    aria-label="Next image"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
+
+              <img 
+                src={images[selectedImageIndex] || images[0]} 
+                alt={`${room.name} - Photo ${selectedImageIndex + 1}`} 
+                className="w-full h-full object-contain"
+              />
+
+              {images.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 overflow-x-auto max-w-[90vw] px-4 py-2 bg-black/50 rounded-full backdrop-blur-md">
+                  {images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedImageIndex(idx)}
+                      className={`w-2 h-2 rounded-full flex-shrink-0 transition-all ${idx === selectedImageIndex ? 'bg-red-600 scale-125' : 'bg-white/50 hover:bg-white/80'}`}
+                      aria-label={`Go to image ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}
