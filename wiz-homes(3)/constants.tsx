@@ -6,7 +6,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '1',
     name: 'Wiz Standaard Suite 1',
-    price: 100,
+    price: 67,
     status: RoomStatus.AVAILABLE,
     amenities: ['High-speed Wifi', 'Private Pool', 'State-of-the-art Gym', 'Panaromic City View', '24/7 Concierge', 'Smart Home System'],
     imageUrl: '',
@@ -18,7 +18,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '2',
     name: 'Wiz Standard Suite 2',
-    price: 100,
+    price: 67,
     status: RoomStatus.BOOKED,
     amenities: ['Wifi', 'Designer Kitchen', 'Dedicated Workspace', 'Nespresso Machine', 'Rain Shower'],
     imageUrl: '',
@@ -54,7 +54,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '5',
     name: 'Wiz Presidential 1',
-    price: 100,
+    price: 133,
     status: RoomStatus.NOT_AVAILABLE,
     amenities: ['Private Butler', 'Rooftop Pool', 'Home Theater', 'Secure Parking', 'Grand Piano'],
     imageUrl: '',
@@ -66,7 +66,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '6',
     name: 'Wiz Presidentail Suite 2',
-    price: 100,
+    price: 133,
     status: RoomStatus.AVAILABLE,
     amenities: ['Wifi', 'Pet Friendly', 'Balcony', 'City Center Access', 'Modern Furniture'],
     imageUrl: '',

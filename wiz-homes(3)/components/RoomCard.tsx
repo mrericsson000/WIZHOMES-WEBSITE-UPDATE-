@@ -43,7 +43,6 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
             <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">Image pending upload</span>
           </div>
         )}
-        )}
         <button 
           onClick={(e) => {
             e.stopPropagation();
