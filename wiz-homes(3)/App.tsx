@@ -1,15 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { MemoryRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+import { MemoryRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Icons, Logo } from './constants';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 import RoomDetail from './pages/RoomDetail';
 import Contact from './pages/Contact';
-import Admin from './pages/Admin';
-import Login from './pages/Login';
 
-const Navbar: React.FC<{ theme: string; toggleTheme: () => void; isAuthenticated: boolean }> = ({ theme, toggleTheme, isAuthenticated }) => {
+const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin') || location.pathname === '/login';
@@ -47,9 +45,6 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void; isAuthenticated
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 )}
               </button>
-              <Link to={isAuthenticated ? "/admin" : "/login"} className="p-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-full transition-colors">
-                <Icons.User />
-              </Link>
               <button onClick={toggleMenu} className="md:hidden p-2 text-zinc-950 dark:text-white">
                 <Icons.Menu />
               </button>
@@ -72,7 +67,6 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void; isAuthenticated
             <Link to="/" onClick={toggleMenu} className="text-3xl font-black uppercase tracking-tighter">Home</Link>
             <Link to="/rooms" onClick={toggleMenu} className="text-3xl font-black uppercase tracking-tighter">Inventory</Link>
             <Link to="/contact" onClick={toggleMenu} className="text-3xl font-black uppercase tracking-tighter">Contact</Link>
-            <Link to={isAuthenticated ? "/admin" : "/login"} onClick={toggleMenu} className="text-xl font-black uppercase tracking-widest text-red-600 pt-8 border-t border-zinc-100 dark:border-zinc-800">Admin Area</Link>
           </nav>
         </div>
       </div>
@@ -113,7 +107,6 @@ const Footer: React.FC = () => {
               <li><Link to="/" className="hover:text-red-600 transition-colors">Home</Link></li>
               <li><Link to="/rooms" className="hover:text-red-600 transition-colors">Inventory</Link></li>
               <li><Link to="/contact" className="hover:text-red-600 transition-colors">Concierge</Link></li>
-              <li><Link to="/admin" className="hover:text-red-600 transition-colors">Operator Portal</Link></li>
             </ul>
           </div>
           <div>
@@ -143,8 +136,6 @@ const App: React.FC = () => {
     return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   });
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -158,24 +149,16 @@ const App: React.FC = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
 
-  const handleLogin = () => setIsAuthenticated(true);
-  const handleLogout = () => setIsAuthenticated(false);
-
   return (
     <MemoryRouter>
       <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 transition-colors duration-300">
-        <Navbar theme={theme} toggleTheme={toggleTheme} isAuthenticated={isAuthenticated} />
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />
-            <Route 
-              path="/admin/*" 
-              element={isAuthenticated ? <Admin theme={theme} toggleTheme={toggleTheme} onLogout={handleLogout} /> : <Navigate to="/login" replace />} 
-            />
           </Routes>
         </main>
         <Footer />
