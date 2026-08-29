@@ -21,8 +21,8 @@ export const MOCK_ROOMS: Room[] = [
     price: 67,
     status: RoomStatus.BOOKED,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
-    imageUrl: '',
-    gallery: [],
+    imageUrl: '/STANDARD SUITE 2/standard-suite-2-1.jpeg',
+    gallery: ['/STANDARD SUITE 2/standard-suite-2-1.jpeg', '/STANDARD SUITE 2/standard-suite-2-2.jpeg', '/STANDARD SUITE 2/standard-suite-2-3.jpeg', '/STANDARD SUITE 2/standard-suite-2-4.jpeg', '/STANDARD SUITE 2/standard-suite-2-5.jpeg', '/STANDARD SUITE 2/standard-suite-2-6.jpeg', '/STANDARD SUITE 2/standard-suite-2-7.jpeg', '/STANDARD SUITE 2/standard-suite-2-8.jpeg'],
     rating: 4.7,
     location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
