@@ -8,72 +8,72 @@ export const MOCK_ROOMS: Room[] = [
     name: 'Wiz Standaard Suite 1',
     price: 67,
     status: RoomStatus.AVAILABLE,
-    amenities: ['High-speed Wifi', 'Private Pool', 'State-of-the-art Gym', 'Panaromic City View', '24/7 Concierge', 'Smart Home System'],
+    amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '',
     gallery: [],
     rating: 4.9,
     location: 'Downtown Core',
-    description: 'Experience pure luxury in our flagship penthouse. Featuring soaring floor-to-ceiling windows and bespoke Italian furniture, this residence offers an unparalleled lifestyle. Every detail has been curated to provide a sophisticated sanctuary above the bustling city streets.'
+    description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
     id: '2',
     name: 'Wiz Standard Suite 2',
     price: 67,
     status: RoomStatus.BOOKED,
-    amenities: ['Wifi', 'Designer Kitchen', 'Dedicated Workspace', 'Nespresso Machine', 'Rain Shower'],
+    amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '',
     gallery: [],
     rating: 4.7,
     location: 'Arts District',
-    description: 'Perfect for business travelers and creative souls. This studio combines industrial aesthetics with warm, natural materials to create an inspiring home office environment.'
+    description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
     id: '3',
     name: 'Wiz Executive Suite 1',
     price: 100,
     status: RoomStatus.AVAILABLE,
-    amenities: ['Wifi', 'Private Terrace', 'Hot Tub', 'Open Plan Living', 'Wine Cellar'],
+    amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '',
     gallery: [],
     rating: 4.8,
     location: 'Financial District',
-    description: 'A spacious loft with breathtaking skyline views and a private terrace designed for hosting evening soirees under the stars.'
+    description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
     id: '4',
     name: 'Wiz Executive 2',
     price: 100,
     status: RoomStatus.AVAILABLE,
-    amenities: ['Private Garden', 'Wifi', 'Breakfast Included', 'Yoga Studio Access', 'Eco-friendly Design'],
+    amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '',
     gallery: [],
     rating: 4.6,
     location: 'Greenwich Park',
-    description: 'Peaceful retreat surrounded by lush greenery. The interior palette of soft earth tones and natural textures creates a truly calming atmosphere.'
+    description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
     id: '5',
     name: 'Wiz Presidential 1',
     price: 133,
     status: RoomStatus.NOT_AVAILABLE,
-    amenities: ['Private Butler', 'Rooftop Pool', 'Home Theater', 'Secure Parking', 'Grand Piano'],
+    amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '',
     gallery: [],
     rating: 5.0,
     location: 'Highland Heights',
-    description: 'The ultimate executive living experience. This two-story residence boasts architectural significance and a suite of services typically reserved for world-class hotels.'
+    description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
     id: '6',
     name: 'Wiz Presidentail Suite 2',
     price: 133,
     status: RoomStatus.AVAILABLE,
-    amenities: ['Wifi', 'Pet Friendly', 'Balcony', 'City Center Access', 'Modern Furniture'],
+    amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '',
     gallery: [],
     rating: 4.5,
     location: 'Metro Center',
-    description: 'Stylish, central, and close to everything. An ideal base for exploring the city vibrant nightlife and shopping districts.'
+    description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   }
 ];
 
