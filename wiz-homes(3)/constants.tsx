@@ -69,8 +69,8 @@ export const MOCK_ROOMS: Room[] = [
     price: 133,
     status: RoomStatus.AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
-    imageUrl: '',
-    gallery: [],
+    imageUrl: '/PRESIDENTIAL SUITE 2/presidential-suite-2-1.jpeg',
+    gallery: ['/PRESIDENTIAL SUITE 2/presidential-suite-2-1.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-2.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-3.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-4.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-5.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-6.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-7.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-8.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-9.jpeg', '/PRESIDENTIAL SUITE 2/presidential-suite-2-10.jpeg'],
     rating: 4.5,
     location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
