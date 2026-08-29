@@ -57,7 +57,7 @@ export const MOCK_ROOMS: Room[] = [
     price: 2000,
     status: RoomStatus.NOT_AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
-    imageUrl: '/PRESIDENTIAL SUITE 1/presidential-suite-1-1.jpeg',
+    imageUrl: '/PRESIDENTIAL SUITE 1/presidential-suite-1-2.jpeg',
     gallery: ['/PRESIDENTIAL SUITE 1/presidential-suite-1-1.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-2.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-3.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-4.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-5.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-6.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-7.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-8.jpeg', '/PRESIDENTIAL SUITE 1/presidential-suite-1-9.jpeg'],
     rating: 5.0,
     location: '',
