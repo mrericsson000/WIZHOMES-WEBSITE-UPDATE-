@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { MemoryRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Icons, Logo } from './constants';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
@@ -150,7 +150,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <MemoryRouter>
+    <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 transition-colors duration-300">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-grow">
@@ -163,7 +163,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
       </div>
-    </MemoryRouter>
+      </BrowserRouter>
   );
 };
 
