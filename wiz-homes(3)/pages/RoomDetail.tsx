@@ -258,7 +258,7 @@ const RoomDetail: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="sticky top-28 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 shadow-2xl transition-colors">
               <div className="flex justify-between items-end mb-8">
-                <div><span className="text-2xl font-black dark:text-white">${room.price}</span><span className="text-zinc-500 text-sm ml-1">night</span></div>
+                <div><span className="text-2xl font-black dark:text-white">₵{room.price}</span><span className="text-zinc-500 text-sm ml-1">night</span></div>
                 <div className="flex items-center space-x-1 text-sm font-bold dark:text-zinc-300"><Icons.Star /><span>{room.rating}</span></div>
               </div>
 
@@ -276,8 +276,8 @@ const RoomDetail: React.FC = () => {
               </button>
 
               <div className="space-y-4 text-zinc-600 dark:text-zinc-400 mt-6">
-                <div className="flex justify-between"><span className="underline">${room.price} x {nights} nights</span><span>${subtotal}</span></div>
-                <div className="flex justify-between font-black text-zinc-950 dark:text-white text-lg"><span>Total</span><span>${total}</span></div>
+                <div className="flex justify-between"><span className="underline">₵{room.price} x {nights} nights</span><span>₵{subtotal}</span></div>
+                <div className="flex justify-between font-black text-zinc-950 dark:text-white text-lg"><span>Total</span><span>₵{total}</span></div>
               </div>
 
               <div className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700">

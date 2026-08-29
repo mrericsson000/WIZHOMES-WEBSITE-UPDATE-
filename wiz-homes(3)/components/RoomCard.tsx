@@ -72,7 +72,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
           ))}
         </div>
         <div className="pt-2">
-          <span className="font-bold text-lg dark:text-zinc-100">${room.price}</span>
+          <span className="font-bold text-lg dark:text-zinc-100">₵{room.price}</span>
           <span className="text-zinc-500 dark:text-zinc-500 text-sm"> / night</span>
         </div>
       </div>

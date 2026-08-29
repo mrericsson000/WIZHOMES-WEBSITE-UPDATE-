@@ -138,7 +138,7 @@ const Admin: React.FC<AdminProps> = ({ theme, toggleTheme, onLogout }) => {
     { label: 'Total Rooms', value: rooms.length, icon: <Icons.Home />, color: 'bg-red-600' },
     { label: 'Occupancy', value: `${rooms.length ? Math.round((rooms.filter(r => r.status === RoomStatus.BOOKED).length / rooms.length) * 100) : 0}%`, icon: <Icons.Check />, color: 'bg-zinc-950 dark:bg-zinc-900' },
     { label: 'Available', value: rooms.filter(r => r.status === RoomStatus.AVAILABLE).length, icon: <Icons.Star />, color: 'bg-green-600' },
-    { label: 'Est. Revenue', value: '$12.8k', icon: <div className="text-white font-bold">$</div>, color: 'bg-red-700' },
+    { label: 'Est. Revenue', value: '₵12.8k', icon: <div className="text-white font-bold">₵</div>, color: 'bg-red-700' },
   ];
 
   return (
@@ -192,7 +192,7 @@ const Admin: React.FC<AdminProps> = ({ theme, toggleTheme, onLogout }) => {
                     <p className="text-zinc-500 font-black uppercase tracking-[0.3em] text-[10px]">{viewingRoom.location}</p>
                   </div>
                   <div className="bg-red-600 text-white p-8 rounded-[2.5rem] shadow-2xl shadow-red-600/30 text-center min-w-[200px]">
-                    <p className="text-4xl font-black tracking-tighter leading-none">${viewingRoom.price}</p>
+                     <p className="text-4xl font-black tracking-tighter leading-none">₵{viewingRoom.price}</p>
                     <p className="text-white/60 font-black uppercase tracking-widest text-[9px] mt-2">Nightly Rate</p>
                   </div>
                 </div>
@@ -288,7 +288,7 @@ const Admin: React.FC<AdminProps> = ({ theme, toggleTheme, onLogout }) => {
                     />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">Nightly Valuation ($)</label>
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">Nightly Valuation (₵)</label>
                     <input 
                       type="number" 
                       required
@@ -591,7 +591,7 @@ const Admin: React.FC<AdminProps> = ({ theme, toggleTheme, onLogout }) => {
                       <td className="px-12 py-10">
                         {activeTab === 'rooms' ? (
                           <div className="space-y-2">
-                            <p className="font-black text-zinc-950 dark:text-white text-2xl tracking-tighter leading-none">${item.price}<span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-3 opacity-50">per night</span></p>
+                            <p className="font-black text-zinc-950 dark:text-white text-2xl tracking-tighter leading-none">₵{item.price}<span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-3 opacity-50">per night</span></p>
                             <div className="flex items-center space-x-2 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
                               <Icons.Star />
                               <span className="dark:text-zinc-400">{item.rating} Quality Score</span>

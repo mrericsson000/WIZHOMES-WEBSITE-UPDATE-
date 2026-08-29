@@ -6,7 +6,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '1',
     name: 'Wiz Standaard Suite 1',
-    price: 67,
+    price: 1000,
     status: RoomStatus.AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '/STANDARD SUITE 1/standard-suite-1-1.jpeg',
@@ -18,7 +18,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '2',
     name: 'Wiz Standard Suite 2',
-    price: 67,
+    price: 1000,
     status: RoomStatus.BOOKED,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '/STANDARD SUITE 2/standard-suite-2-1.jpeg',
@@ -30,7 +30,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '3',
     name: 'Wiz Executive Suite 1',
-    price: 100,
+    price: 1500,
     status: RoomStatus.AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '/EXECUTIVE SUITE 1/executive-suite-1-1.jpeg',
@@ -42,7 +42,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '4',
     name: 'Wiz Executive 2',
-    price: 100,
+    price: 1500,
     status: RoomStatus.AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '/EXECUTIVE SUITE 2/executive-suite-2-1.jpeg',
@@ -54,7 +54,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '5',
     name: 'Wiz Presidential 1',
-    price: 133,
+    price: 2000,
     status: RoomStatus.NOT_AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '/PRESIDENTIAL SUITE 1/presidential-suite-1-1.jpeg',
@@ -66,7 +66,7 @@ export const MOCK_ROOMS: Room[] = [
   {
     id: '6',
     name: 'Wiz Presidentail Suite 2',
-    price: 133,
+    price: 2000,
     status: RoomStatus.AVAILABLE,
     amenities: ['1 Bedroom', 'Living Area', 'Dining Area', 'Open Kitchen', '2 Washrooms', 'Balcony', 'DSTV', 'High Speed Free Wifi', 'CCTV', 'Indoor Bar', 'Electricity', 'Security Guard'],
     imageUrl: '/PRESIDENTIAL SUITE 2/presidential-suite-2-1.jpeg',
@@ -84,9 +84,9 @@ export const getRooms = (): Room[] => {
 };
 
 export const MOCK_BOOKINGS: Booking[] = [
-  { id: 'B1', guestName: 'Alice Johnson', roomName: 'Wiz Standaard Suite 1', checkIn: '2023-12-01', checkOut: '2023-12-05', status: 'Confirmed', total: 1800 },
-  { id: 'B2', guestName: 'Bob Smith', roomName: 'Wiz Standard Suite 2', checkIn: '2023-12-02', checkOut: '2023-12-04', status: 'Confirmed', total: 360 },
-  { id: 'B3', guestName: 'Charlie Brown', roomName: 'Wiz Executive Suite 1', checkIn: '2023-12-10', checkOut: '2023-12-15', status: 'Pending', total: 1600 }
+  { id: 'B1', guestName: 'Alice Johnson', roomName: 'Wiz Standaard Suite 1', checkIn: '2023-12-01', checkOut: '2023-12-05', status: 'Confirmed', total: 4165 },
+  { id: 'B2', guestName: 'Bob Smith', roomName: 'Wiz Standard Suite 2', checkIn: '2023-12-02', checkOut: '2023-12-04', status: 'Confirmed', total: 2165 },
+  { id: 'B3', guestName: 'Charlie Brown', roomName: 'Wiz Executive Suite 1', checkIn: '2023-12-10', checkOut: '2023-12-15', status: 'Pending', total: 7565 }
 ];
 
 export const Logo: React.FC<{ className?: string; light?: boolean }> = ({ className = "h-12", light = false }) => (

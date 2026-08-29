@@ -76,7 +76,7 @@ const Rooms: React.FC = () => {
             <div>
               <h4 className="font-bold mb-4">Price Range</h4>
               <input type="range" className="w-full accent-red-600" min="0" max="1000" />
-              <div className="flex justify-between text-xs mt-2 text-zinc-500">$0 - $1000+</div>
+              <div className="flex justify-between text-xs mt-2 text-zinc-500">₵0 - ₵1000+</div>
             </div>
             <div>
               <h4 className="font-bold mb-4">Amenities</h4>
