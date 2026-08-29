@@ -12,7 +12,7 @@ export const MOCK_ROOMS: Room[] = [
     imageUrl: '',
     gallery: [],
     rating: 4.9,
-    location: 'Downtown Core',
+    location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
@@ -24,7 +24,7 @@ export const MOCK_ROOMS: Room[] = [
     imageUrl: '',
     gallery: [],
     rating: 4.7,
-    location: 'Arts District',
+    location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
@@ -36,7 +36,7 @@ export const MOCK_ROOMS: Room[] = [
     imageUrl: '',
     gallery: [],
     rating: 4.8,
-    location: 'Financial District',
+    location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
@@ -48,7 +48,7 @@ export const MOCK_ROOMS: Room[] = [
     imageUrl: '',
     gallery: [],
     rating: 4.6,
-    location: 'Greenwich Park',
+    location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
@@ -60,7 +60,7 @@ export const MOCK_ROOMS: Room[] = [
     imageUrl: '',
     gallery: [],
     rating: 5.0,
-    location: 'Highland Heights',
+    location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   },
   {
@@ -72,7 +72,7 @@ export const MOCK_ROOMS: Room[] = [
     imageUrl: '',
     gallery: [],
     rating: 4.5,
-    location: 'Metro Center',
+    location: '',
     description: 'Comfortable 1-bedroom apartment with a spacious living area, dining area, and open kitchen. Features 2 washrooms and a private balcony. The entire complex is equipped with DSTV, high-speed free WiFi, and CCTV surveillance throughout. Enjoy access to our exclusive indoor bar for guests. The property is fully fenced with electricity and guarded by security personnel 24/7.'
   }
 ];
