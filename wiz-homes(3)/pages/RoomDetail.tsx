@@ -12,6 +12,16 @@ const RoomDetail: React.FC = () => {
     return rooms.find(r => r.id === id);
   }, [id]);
 
+  const formatDate = (date: Date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const today = useMemo(() => formatDate(new Date()), []);
+  const tomorrow = useMemo(() => formatDate(new Date(Date.now() + 24 * 60 * 60 * 1000)), []);
+
   // UI State
   const [isSaved, setIsSaved] = useState(false);
   const [descExpanded, setDescExpanded] = useState(false);
@@ -20,8 +30,8 @@ const RoomDetail: React.FC = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   // Form State
-  const [checkIn, setCheckIn] = useState('2024-12-01');
-  const [checkOut, setCheckOut] = useState('2024-12-05');
+  const [checkIn, setCheckIn] = useState(today);
+  const [checkOut, setCheckOut] = useState(tomorrow);
   const [guests, setGuests] = useState(1);
 
   if (!room) {
