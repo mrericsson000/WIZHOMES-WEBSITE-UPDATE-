@@ -225,7 +225,6 @@ const RoomDetail: React.FC = () => {
             <div className="flex justify-between items-start pb-8 border-b border-zinc-100 dark:border-zinc-800">
               <div>
                 <h2 className="text-2xl font-bold dark:text-white">Luxury apartment hosted by WIZ</h2>
-                <p className="text-zinc-500 dark:text-zinc-400 mt-2">{room.location} • 4 guests • 2 bedrooms • 2 beds • 1 bath</p>
               </div>
               <div className="w-14 h-14 bg-zinc-950 dark:bg-zinc-800 rounded-full flex items-center justify-center text-red-600 font-black text-xl border dark:border-zinc-700 shadow-xl">W</div>
             </div>
