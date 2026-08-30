@@ -70,10 +70,17 @@ const RoomDetail: React.FC = () => {
     return diffDays > 0 ? diffDays : 1;
   }, [checkIn, checkOut]);
 
-  const serviceFee = 120;
-  const cleaningFee = 45;
+  const discountRate = useMemo(() => {
+    if (nights >= 365) return 0.30;
+    if (nights >= 30) return 0.15;
+    if (nights >= 7) return 0.10;
+    if (nights >= 3) return 0.05;
+    return 0;
+  }, [nights]);
+
   const subtotal = room.price * nights;
-  const total = subtotal + serviceFee + cleaningFee;
+  const discountAmount = subtotal * discountRate;
+  const total = subtotal - discountAmount;
 
   const handleInquireViaWhatsApp = () => {
     const whatsappNumber = '233552795947'; // WhatsApp number: 0552795947
@@ -275,8 +282,14 @@ const RoomDetail: React.FC = () => {
               </button>
 
               <div className="space-y-4 text-zinc-600 dark:text-zinc-400 mt-6">
-                <div className="flex justify-between"><span className="underline">₵{room.price} x {nights} nights</span><span>₵{subtotal}</span></div>
-                <div className="flex justify-between font-black text-zinc-950 dark:text-white text-lg"><span>Total</span><span>₵{total}</span></div>
+                <div className="flex justify-between"><span>₵{room.price} x {nights} nights</span><span>₵{subtotal}</span></div>
+                {discountRate > 0 && (
+                  <div className="flex justify-between text-green-600">
+                    <span>Discount ({Math.round(discountRate * 100)}%)</span>
+                    <span>-₵{discountAmount.toFixed(2)}</span>
+                  </div>
+                )}
+                <div className="flex justify-between font-black text-zinc-950 dark:text-white text-lg"><span>Total</span><span>₵{total.toFixed(2)}</span></div>
               </div>
 
               <div className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700">
