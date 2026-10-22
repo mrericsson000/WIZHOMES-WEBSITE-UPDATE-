@@ -7,15 +7,26 @@ const RoomDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
+  const room = useMemo(() => {
+    const rooms = getRooms();
+    return rooms.find(r => r.id === id);
+  }, [id]);
+
   // Scroll to top when apartment detail loads
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, [id]);
   
-  const room = useMemo(() => {
-    const rooms = getRooms();
-    return rooms.find(r => r.id === id);
-  }, [id]);
+  // SEO: update document title and meta when room loads
+  useEffect(() => {
+    if (room) {
+      document.title = `${room.name} | WIZ HOMES - Luxury Apartment in Cape Coast, Ghana`;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', `${room.description} Book this ${room.name} in Cape Coast, Ghana. Price: ₵${room.price}/night. Rating: ${room.rating}/5. Amenities: ${room.amenities.join(', ')}.`);
+      }
+    }
+  }, [id, room]);
 
   const formatDate = (date: Date) => {
     const year = date.getFullYear();
@@ -116,6 +127,35 @@ const RoomDetail: React.FC = () => {
             <button onClick={() => setNotification(null)} className="ml-4 opacity-50">✕</button>
           </div>
         </div>
+      )}
+      
+      {/* SEO Structured Data */}
+      {room && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": room.name,
+          "image": room.imageUrl,
+          "description": room.description,
+          "brand": {
+            "@type": "Brand",
+            "name": "WIZ HOMES"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": room.price,
+            "priceCurrency": "GHS",
+            "availability": room.status === 'Available' ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+            "url": `https://wizhomesgh.com/rooms/${room.id}`
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": room.rating,
+            "bestRating": 5,
+            "reviewCount": 1
+          },
+          "category": "apartment"
+        }) }} />
       )}
 
       {/* Detail Header / Gallery */}

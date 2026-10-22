@@ -1,5 +1,5 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Icons, getRooms } from '../constants';
 import RoomCard from '../components/RoomCard';
 import { RoomStatus } from '../types';
@@ -10,6 +10,15 @@ const Rooms: React.FC = () => {
   const [showFilters, setShowFilters] = useState(false);
 
   const rooms = useMemo(() => getRooms(), []);
+
+  // Update document title and meta for SEO
+  useEffect(() => {
+    document.title = 'Our Apartments | WIZ HOMES - Luxury Apartments in Cape Coast, Ghana';
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', `Browse ${rooms.length} luxury apartments and suites available in Cape Coast, Ghana. WIZ HOMES offers premium 1-bedroom apartments with modern amenities, high-speed WiFi, DSTV, and 24/7 security. Find your perfect stay.`);
+    }
+  }, [rooms]);
 
   const filteredRooms = useMemo(() => {
     return rooms.filter(room => {

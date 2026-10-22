@@ -1,0 +1,16 @@
+{
+  "name": "WIZ HOMES",
+  "short_name": "WIZ HOMES",
+  "description": "Luxury apartments and premium living spaces in Cape Coast, Ghana",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#DC2626",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

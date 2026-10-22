@@ -1,5 +1,5 @@
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Icons, getRooms } from '../constants';
 import RoomCard from '../components/RoomCard';
@@ -8,6 +8,11 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const rooms = useMemo(() => getRooms(), []);
   const featuredRooms = rooms;
+
+  // SEO: update document title
+  useEffect(() => {
+    document.title = 'WIZ HOMES | Luxury Apartments & Premium Living in Cape Coast, Ghana';
+  }, []);
 
   return (
     <div className="animate-in fade-in duration-700">
