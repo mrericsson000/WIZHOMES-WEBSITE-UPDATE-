@@ -1,11 +1,16 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getRooms, Icons } from '../constants';
 
 const RoomDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  
+  // Scroll to top when apartment detail loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [id]);
   
   const room = useMemo(() => {
     const rooms = getRooms();
@@ -272,7 +277,7 @@ const RoomDetail: React.FC = () => {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="sticky top-28 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 shadow-2xl transition-colors">
+            <div className="lg:sticky lg:top-28 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 shadow-2xl transition-colors">
               <div className="flex justify-between items-end mb-8">
                 <div><span className="text-2xl font-black dark:text-white">₵{room.price}</span><span className="text-zinc-500 text-sm ml-1">night</span></div>
                 <div className="flex items-center space-x-1 text-sm font-bold dark:text-zinc-300"><Icons.Star /><span>{room.rating}</span></div>

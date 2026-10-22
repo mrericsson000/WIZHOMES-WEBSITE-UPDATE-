@@ -7,6 +7,16 @@ import Rooms from './pages/Rooms';
 import RoomDetail from './pages/RoomDetail';
 import Contact from './pages/Contact';
 
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [pathname]);
+  
+  return null;
+};
+
 const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -81,7 +91,7 @@ const Footer: React.FC = () => {
   if (isAdmin) return null;
 
   return (
-    <footer className="bg-zinc-950 dark:bg-black text-white pt-24 pb-12 border-t border-zinc-900">
+    <footer className="bg-zinc-950 dark:bg-black text-white pt-12 pb-12 border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-1 md:col-span-2 space-y-8">
@@ -169,6 +179,7 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 transition-colors duration-300">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-grow">
