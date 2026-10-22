@@ -7,7 +7,7 @@ import RoomCard from '../components/RoomCard';
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const rooms = useMemo(() => getRooms(), []);
-  const featuredRooms = rooms.slice(0, 4);
+  const featuredRooms = rooms;
 
   return (
     <div className="animate-in fade-in duration-700">
@@ -62,18 +62,13 @@ const Home: React.FC = () => {
 
       {/* Featured Section */}
       <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
-          <div className="space-y-4">
+        <div className="space-y-4">
             <span className="text-red-600 font-black uppercase tracking-[0.4em] text-[10px]">Premium Collection</span>
             <h2 className="text-5xl font-black text-zinc-950 dark:text-white uppercase tracking-tighter">Iconic Residences</h2>
             <p className="text-zinc-500 dark:text-zinc-400 font-medium max-w-lg">Our apartments are hand-selected for their architectural significance and uncompromising quality.</p>
           </div>
-          <Link to="/rooms" className="text-zinc-950 dark:text-white font-black uppercase tracking-widest text-[11px] border-b-2 border-red-600 pb-3 hover:text-red-600 dark:hover:text-red-500 transition-colors">
-            View All Units
-          </Link>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {featuredRooms.map(room => (
             <RoomCard key={room.id} room={room} />
           ))}
