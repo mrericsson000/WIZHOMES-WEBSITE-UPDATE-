@@ -139,8 +139,8 @@ const RoomDetail: React.FC = () => {
 
         {/* Gallery Grid */}
         {images.length > 0 && images[0] ? (
-          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-3 md:gap-4 h-[300px] md:h-[500px] rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800">
-            <div className="col-span-2 md:col-span-2 md:row-span-2 overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-3 md:gap-4 rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800 md:h-[500px]">
+            <div className="col-span-2 md:col-span-2 md:row-span-2 overflow-hidden aspect-[4/3] md:aspect-auto">
               <img 
                 src={images[0]} 
                 alt={`${room.name} - Main photo`} 
@@ -149,7 +149,7 @@ const RoomDetail: React.FC = () => {
               />
             </div>
             {images.slice(1, 5).map((img, idx) => (
-              <div key={idx} className={`overflow-hidden ${idx === 3 && images.length > 5 ? 'relative' : ''}`}>
+              <div key={idx} className={`overflow-hidden aspect-[4/3] md:aspect-auto ${idx === 3 && images.length > 5 ? 'relative' : ''}`}>
                 <img 
                   src={img || images[0]} 
                   alt={`${room.name} - Photo ${idx + 2}`} 
